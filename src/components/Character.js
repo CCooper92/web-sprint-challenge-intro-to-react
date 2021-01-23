@@ -1,8 +1,6 @@
 // Write your Character component here
 import React from 'react';
-//import App from '../App';
-// import axios from 'axios';
-// import {BASE_URL} from '../constants/keys';
+import styled from 'styled-components';
 
 const Character = (props) => {
     const {data} = props;
@@ -34,38 +32,84 @@ const Character = (props) => {
         })
     );
     
+    const eye_color = (
+        data.map(info => {
+            return info.eye_color;
+        })
+    );
     
 
     return (
-      <div>  
-        <div>
-            <h1>{char[0]}</h1>
-            <p>{gender[0]}</p>
-            <p>{skin_color[0]}</p>
-            <p>{height[0]}</p>
-            <p>{mass[0]}</p>
-        </div>
+      <Head>  
+        <Main>
+            <h1>Name: {char[0]}</h1>
+            <p>Gender: {gender[0]}</p>
+            <p>Skin Color: {skin_color[0]}</p>
+            <p>Height: {height[0]}</p>
+            <p>Mass: {mass[0]}</p>
+            <p>Eye Color: {eye_color[0]}</p>
+        </Main>
 
-        <div>
-            <h1>{char[1]}</h1>
-            <p>{gender[1]}</p>
-            <p>{skin_color[1]}</p>
-            <p>{height[1]}</p>
-            <p>{mass[1]}</p>
-        </div>
+        <Main>
+            <h1>Name: {char[5]}</h1>
+            <p>Gender: {gender[5]}</p>
+            <p>Skin Color: {skin_color[5]}</p>
+            <p>Height: {height[5]}</p>
+            <p>Mass: {mass[5]}</p>
+            <p>Eye Color: {eye_color[5]}</p>
+        </Main>
         
-        <div>
-            <h1>{char[2]}</h1>
-            <p>{gender[2]}</p>
-            <p>{skin_color[2]}</p>
-            <p>{height[2]}</p>
-            <p>{mass[2]}</p>
-        </div>
+        <Main>
+            <h1>Name: {char[9]}</h1>
+            <p>Gender: {gender[9]}</p>
+            <p>Skin Color:{skin_color[9]}</p>
+            <p>Height: {height[9]}</p>
+            <p>Mass: {mass[9]}</p>
+            <p>Eye Color: {eye_color[9]}</p>
+        </Main>
 
-      </div>  
+        <Main>
+            <h1>Name: {char[4]}</h1>
+            <p>Gender: {gender[4]}</p>
+            <p>Skin Color:{skin_color[4]}</p>
+            <p>Height: {height[4]}</p>
+            <p>Mass: {mass[4]}</p>
+            <p>Eye Color: {eye_color[4]}</p>
+        </Main>
+
+        <Main>
+            <h1>Name: {char[8]}</h1>
+            <p>Gender: {gender[8]}</p>
+            <p>Skin Color:{skin_color[8]}</p>
+            <p>Height: {height[8]}</p>
+            <p>Mass: {mass[8]}</p>
+            <p>Eye Color: {eye_color[8]}</p>
+        </Main>
+
+      </Head>  
 
     );
 };
+
+    const Head = styled.div`
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-content:center;
+        max-width:100%;
+        align-items:center;
+        padding-bottom:5%;
+    `;
+
+    const Main = styled.div`
+    border: 1px dashed brown;
+    background-color:white;
+    width:50%;
+    justify-content:center;
+    opacity:0.5;
     
+    
+    `;
+
 
 export default Character;

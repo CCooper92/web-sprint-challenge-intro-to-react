@@ -3,6 +3,7 @@ import './App.css';
 import Character from './components/Character';
 import axios from 'axios';
 import {BASE_URL} from './constants/keys';
+import styled from 'styled-components'
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -24,7 +25,7 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <Title>STAR WARS CHARACTERS</Title>
   
 
       <div className='listItems'>
@@ -33,5 +34,8 @@ useEffect(() => {
     </div>
   );
 }
-
+const Title = styled.h1`
+font-size:3rem;
+`
 export default App;
+
